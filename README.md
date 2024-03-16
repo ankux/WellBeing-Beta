@@ -20,7 +20,7 @@ This project is a website aimed at promoting mental health and wellbeing. It off
 - **jQuery**: JavaScript library for DOM manipulation and event handling.
 
 ## Deployment
-The website is deployed and accessible at [insert your deployment link here].
+The website is deployed and accessible at [GitHub Repository](https://github.com/ankux/WellBeing/).
 
 ## Credits
 - **Ankush Kumar**: Creator of the website. You can find more about Ankush on [GitHub](https://github.com/ankux), [LinkedIn](https://linkedin.com/in/ankux), and [Twitter](https://twitter.com/ankooooosh).
