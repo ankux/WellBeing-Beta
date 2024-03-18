@@ -16,6 +16,8 @@
     <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- AOS library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>wellbeing.</title>
   </head>
   <body class="font-inter">
@@ -83,7 +85,7 @@
     </div>
 
     <!-- hero section -->
-    <div class="p-10 h-[30rem] sm:flex justify-evenly items-center  max-sm:h-[42rem]">
+    <div class="p-10 h-[75vh] sm:flex justify-evenly items-center  max-sm:h-[42rem]">
       <div class="sm:p-10"> 
         <div>
           <h1 class="uppercase font-extrabold sm:text-6xl text-4xl ">
@@ -148,10 +150,10 @@
 
 
 <!-- About us -->
-    <div class=" h-[43rem] p-5 mt-[2rem] max-sm:h-[104rem]">
+    <div class=" h-[75vh] p-5 mt-[2rem] max-sm:h-[104rem]">
         <div class="flex max-sm:flex-col" >
           <div class=" w-full ">
-            <img src="assets/teamcheering.gif"  width="100%" class="rounded-r-[5rem]">
+            <img src="assets/about_team.jpg" width="100%" class="rounded-r-[5rem]">
           </div>
           <div class="w-full py-6 px-10 text-gray-800 max-sm:px-4" >
             <h2 class="font-inter font-extrabold text-5xl">About Us</h2>
@@ -268,8 +270,10 @@
 
 
     <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
-      
+      AOS.init();
     </script>
   </body>
 </html>
