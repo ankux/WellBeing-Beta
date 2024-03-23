@@ -34,7 +34,7 @@ $(document).ready(function () {
         {
             index: "assets/psychservices.jpg",
             heading: "Psychiatric Services",
-            description: "Psychiatric sessions are crucial meetings between patients and psychiatric professionals, such as psychiatrists or psychiatric nurse practitioners. These sessions involve comprehensive evaluations, diagnosis, and treatment planning for mental health conditions. Through therapy, medication management, and personalized care, patients receive support in managing their symptoms, improving functioning, and enhancing overall well-being."
+            description: "Psychiatric sessions are crucial meetings between patients and psychiatric professionals. These sessions involve comprehensive evaluations, diagnosis, and treatment planning for mental health conditions. Through therapy, medication management, and personalized care, patients receive support in managing their symptoms, improving functioning, and enhancing overall well-being."
         }
     ];
 
