@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - wellbeing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-[95vh]">
+      <div>
+        <div class="border-4 border-indigo-800 rounded p-10 h-[450px] w-[500px]">
+          <h2 class="mb-5 text-indigo-800 font-bold text-5xl">Login.</h2>
+          <form action="/users/login" method="post">
+            <div>
+              <input
+              class="border-2 rounded mt-2 w-full border-indigo-400 p-2"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+            </div >
+            <div >
+              <input
+              class="border-2 rounded mt-2 w-full border-indigo-400 p-2"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div>
+              <button class="p-3 mt-2 text-center w-full border-2 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500">Login</button>
+            </div class="mt-2">
+            <a href="/users/register"><span class="text-center text-indigo-800 ">New user? Register here</span></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
