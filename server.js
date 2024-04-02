@@ -52,8 +52,9 @@ app.post('/users/register', async (req, res) => {
     }
 
     if (errors.length > 0){
-        
+
     }
+    
 
     let hashedPassword = await bcrypt.hash(password, 10);
     console.log(hashedPassword);
@@ -69,7 +70,6 @@ app.post('/users/register', async (req, res) => {
         }
     )
 
-    
 });
 
 app.listen(PORT, ()=>console.log(`Server Started at ${PORT}`));
