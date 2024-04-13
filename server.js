@@ -6,6 +6,13 @@ const bcrypt = require('bcrypt');
 const ejs = require("ejs");
 const PORT = process.env.PORT || 8000;
 
+app.use(session({
+    secret: 'ankuxkr', 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } 
+}));
+
 
 const collection = require('./mongodb');
 
@@ -29,7 +36,13 @@ app.get('/users/register', (req, res)=>{
 });
 
 app.get('/users/dashboard', (req, res)=>{
-    res.render('dashboard'); 
+
+    if (req.session.user) {
+        res.render('dashboard', { userName: req.session.user.name }); 
+    } else {
+        res.redirect('/users/login'); 
+    }
+
 });
 
 app.get('/quiz', (req, res)=>{
@@ -45,14 +58,16 @@ app.post('/users/register', async (req, res)=>{
     }
 
     await collection.insertMany([data]);
-    res.render('dashboard');
+    req.session.user = { name: data.name };
+    res.render('users/dashboard');
 })
 
 app.post('/users/login', async (req, res)=>{
     try {
         const check = await collection.findOne({email:req.body.email});
-        if(check.password == req.body.password) {
-            res.redirect('dashboard');
+        if( check && check.password == req.body.password) { //ensuring check is not null
+            req.session.user = { name: check.name };
+            res.redirect('/users/dashboard');
         }
         else{
             res.send('wrong password');
