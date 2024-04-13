@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const path = require('path');
-const bcrypt = require('bcrypt');
-const ejs = require("ejs");
 const PORT = process.env.PORT || 8000;
 
 app.use(session({
@@ -23,27 +21,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,"public")))
 
 
-app.get('/', (req, res)=>{
+function ensureNotAuthenticated(req, res, next) {
+    if (req.session.user) {
+        res.redirect('/users/dashboard');
+    } else {
+        return next();
+    }
+}
+
+
+app.get('/', ensureNotAuthenticated, (req, res)=>{
     res.render('index');
 });
+
 
 app.get('/users/login', (req, res)=>{
     res.render('login');
 });
 
+
 app.get('/users/register', (req, res)=>{
     res.render('register');
 });
 
-app.get('/users/dashboard', (req, res)=>{
 
+function ensureAuthenticated(req, res, next) {
     if (req.session.user) {
-        res.render('dashboard', { userName: req.session.user.name }); 
+        return next();
     } else {
-        res.redirect('/users/login'); 
+        res.redirect('/users/login');
     }
+}
 
+app.get('/users/dashboard', ensureAuthenticated, (req, res)=>{
+    res.render('dashboard', { userName: req.session.user.name });
 });
+
 
 app.get('/quiz', (req, res)=>{
     res.render('quiz');
@@ -77,6 +90,16 @@ app.post('/users/login', async (req, res)=>{
     }
 
 })
+
+
+app.get('/users/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/users/dashboard');
+        }
+        res.redirect('/');
+    });
+});
 
 
 app.listen(PORT, ()=>console.log(`Server Started at ${PORT}`));
