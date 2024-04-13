@@ -36,7 +36,7 @@ app.get('/', ensureNotAuthenticated, (req, res)=>{
 
 
 app.get('/users/login', (req, res)=>{
-    res.render('login');
+    res.render('login', { errorMessage: '' }); //When rendering the login page after a failed login attempt, you're already passing the errorMessage variable. Ensure this is done for all cases, including when the page is initially loaded or when redirected from another route.
 });
 
 
@@ -78,15 +78,19 @@ app.post('/users/register', async (req, res)=>{
 app.post('/users/login', async (req, res)=>{
     try {
         const check = await collection.findOne({email:req.body.email});
-        if( check && check.password == req.body.password) { //ensuring check is not null
-            req.session.user = { name: check.name };
-            res.redirect('/users/dashboard');
-        }
-        else{
-            res.send('wrong password');
+        if (check) {
+            if( check.password == req.body.password) { //ensuring check is not null
+                req.session.user = { name: check.name };
+                res.redirect('/users/dashboard');
+            }
+            else{
+                res.render('login', { errorMessage: "Incorrect Password" });
+            }
+        } else {
+            res.render('login', { errorMessage: "User not found" });
         }
     } catch (error) {
-        res.send('user not found');
+        res.render('login', { errorMessage: "An error occured" });
     }
 
 })
@@ -101,5 +105,9 @@ app.get('/users/logout', (req, res) => {
     });
 });
 
+// Catch all handler: the last route
+app.use((req, res, next) => {
+    res.status(404).render('404', { title: '404 - Page Not Found' });
+});
 
 app.listen(PORT, ()=>console.log(`Server Started at ${PORT}`));

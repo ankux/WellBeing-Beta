@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/output.css" />
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+        <!-- fontawesome -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <!-- tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <title>404 - Not Found</title>
+      </head>
+    
+<body>
+    <header
+      class="header h-16 sticky top-0 flex bg-white sm:justify-around max-sm:justify-between items-center shadow-md p-1 font-inter"
+    >
+      <span class="mt-1 max-sm:ml-8">
+        <img src="/assets/logo_transparent.png" alt="logo" width="150px" />
+      </span>
+
+      <ul class="hidden cursor-pointer sm:inline-flex font-semibold">
+        <li class="ml-5 mr-5 border-b-2 transition ease-in-out border-indigo-500 hover:text-indigo-500">
+          <a href="/">Home</a>
+        </li>
+        <li class="ml-5 mr-4 transition ease-in-out hover:text-indigo-500">
+          <a href="/users/dashboard#servicesSection">Services</a>
+        </li>
+        <li class="ml-5 transition ease-in-out hover:text-indigo-500">
+          <a href="/users/dashboard#contactSection">Contact</a>
+        </li>
+      </ul>
+
+      <!-- PC menu -->
+      <span class="max-sm:hidden">
+        <ul class="flex font-semibold font-inter">
+            <li class="mr-2 px-2 py-1">
+                <a
+                  href="#"
+                  class="px-4 py-1"
+                >
+                  
+                </a>
+              </li>
+
+          <li
+            class="px-4 py-1"
+          >
+            <a href="#">  </a>
+          </li>
+        </ul>
+      </span>
+
+    </header>
+    
+    <div class="flex justify-center flex-col items-center h-[80vh]">
+        <div class=" rounded p-20 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
+            <h1 class="font-extrabold text-5xl font-inter mb-5 text-gray-800">404 - Page Not Found</h1>
+            <p class="font-archivo text-xl mb-5 text-gray-600">The page you are looking for does not exist.</p>
+            <a class="font-archivo text-lg text-indigo-600" href="/">Go back to Home</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

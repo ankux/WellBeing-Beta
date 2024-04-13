@@ -7,9 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="flex justify-center items-center h-[95vh]">
+    <img class="mt-5 ml-10 opacity-90" src="/assets/logo_transparent.png" alt="logo" width="150px" />
+    <div class="flex justify-center items-center h-[85vh]">
       <div>
-        <div class="border-4 border-indigo-800 rounded p-10 h-[450px] w-[500px]">
+        <div class="rounded p-10 h-[330px] w-[500px] shadow-[50px_-50px_240px_0px_#4c51bf]">
           <h2 class="mb-5 text-indigo-800 font-bold text-5xl">Login.</h2>
           <form action="/users/login" method="post">
             <div>
@@ -37,6 +38,14 @@
             </div class="mt-2">
             <a href="/users/register"><span class="text-center text-indigo-800 ">New user? Register here</span></a>
           </form>
+
+          <!-- for displaying errors  -->
+          <% if (errorMessage) { %>
+            <script>
+                alert('<%= errorMessage %>');
+            </script>
+        <% } %>
+
         </div>
       </div>
     </div>
