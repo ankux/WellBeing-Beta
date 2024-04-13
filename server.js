@@ -1,19 +1,19 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const ejs = require("ejs");
 const PORT = process.env.PORT || 8000;
-const ejs = require("ejs")
 
-const { pool } = require('./dbConfig');
+
 const collection = require('./mongodb');
 
 
 app.set('view engine', 'ejs'); //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
- app.use(express.static(path.join(__dirname,"public")))
+app.use(express.static(path.join(__dirname,"public")))
 
 
 app.get('/', (req, res)=>{
@@ -52,7 +52,7 @@ app.post('/users/login', async (req, res)=>{
     try {
         const check = await collection.findOne({email:req.body.email});
         if(check.password == req.body.password) {
-            res.render('dashboard')
+            res.redirect('dashboard');
         }
         else{
             res.send('wrong password');
