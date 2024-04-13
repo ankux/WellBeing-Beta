@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const path = require('path');
+const collection = require('./mongodb');
 const PORT = process.env.PORT || 8000;
+
+app.set('view engine', 'ejs'); //middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname,"public")));
 
 app.use(session({
     secret: 'ankuxkr', 
@@ -10,15 +16,6 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false } 
 }));
-
-
-const collection = require('./mongodb');
-
-
-app.set('view engine', 'ejs'); //middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname,"public")))
 
 
 function ensureNotAuthenticated(req, res, next) {
@@ -29,6 +26,13 @@ function ensureNotAuthenticated(req, res, next) {
     }
 }
 
+function ensureAuthenticated(req, res, next) {
+    if (req.session.user) {
+        return next();
+    } else {
+        res.redirect('/users/login');
+    }
+}
 
 app.get('/', ensureNotAuthenticated, (req, res)=>{
     res.render('index');
@@ -45,13 +49,6 @@ app.get('/users/register', (req, res)=>{
 });
 
 
-function ensureAuthenticated(req, res, next) {
-    if (req.session.user) {
-        return next();
-    } else {
-        res.redirect('/users/login');
-    }
-}
 
 app.get('/users/dashboard', ensureAuthenticated, (req, res)=>{
     res.render('dashboard', { userName: req.session.user.name });
@@ -60,6 +57,14 @@ app.get('/users/dashboard', ensureAuthenticated, (req, res)=>{
 
 app.get('/quiz', (req, res)=>{
     res.render('quiz');
+});
+
+app.get('/users/blog', ensureAuthenticated, (req, res)=>{
+    res.render('blog');
+});
+
+app.get('/users/writeblog', ensureAuthenticated, (req, res)=>{
+    res.render('writeblog', { userName: req.session.user.name });
 });
 
 
@@ -72,7 +77,7 @@ app.post('/users/register', async (req, res)=>{
 
     await collection.insertMany([data]);
     req.session.user = { name: data.name };
-    res.render('users/dashboard');
+    res.redirect('/users/dashboard');
 })
 
 app.post('/users/login', async (req, res)=>{

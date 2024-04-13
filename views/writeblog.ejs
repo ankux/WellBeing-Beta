@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/output.css" />
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        <!-- tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Write blog - wellbeing</title>
+      </head>
+<body>
+
+    <header class="header h-16 sticky top-0 flex bg-white sm:justify-around max-sm:justify-between items-center shadow-md p-1 font-inter">
+    <span class="mt-1 max-sm:ml-8">
+      <img src="/assets/logo_transparent.png" alt="logo" width="150px" />
+    </span>
+
+    <ul class="hidden cursor-pointer sm:inline-flex font-semibold">
+      <li class="ml-5 mr-5 border-b-2 transition ease-in-out border-indigo-500 hover:text-indigo-500">
+        <a href="/">Home</a>
+      </li>
+      <li class="ml-5 mr-4 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#servicesSection">Services</a>
+      </li>
+      <li class="ml-5 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#contactSection">Contact</a>
+      </li>
+    </ul>
+
+    <!-- PC menu -->
+    <span class="max-sm:hidden">
+      <ul class="flex font-semibold font-inter">
+        <li class="mr-2 px-2 py-1">
+            <a href="/users/blog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+                 <i class="fa-regular fa-newspaper"></i> See Blogs
+            </a>
+        </li>
+        <li class="border-2 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500">
+          <a href="/users/logout"> Log out </a>
+        </li>
+      </ul>
+    </span>
+
+    <!-- mobile hamburger menu -->
+    <span class="sm:hidden" id="navbarToggle">
+      <i class="fa fa-bars px-10 Bars"></i>
+      <i class="fa fa-xmark px-10 Bars"></i>
+    </span>
+  </header>
+
+  <div class="flex flex-col justify-center items-center font-archivo  h-[90vh]">
+    <div class="p-5 h-[60vh] w-[70%] rounded shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
+        <h1 class="text-2xl text-gray-800 font-bold font-inter">Writing as <%= userName %> </h1>
+        <form class="mt-3" action="/writeblog" method="post">
+            <input class="border-2 w-full h-[50px] rounded p-1 mt-2" placeholder="Title" type="text" id="title" name="title" required> <br>
+            <textarea class="border-2 w-full h-[210px] rounded p-1 mt-2" placeholder="Content" id="content" name="content" required></textarea> <br>
+            <button class="border-2 w-32 mt-1 p-1 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500" type="submit">Post</button>
+        </form>
+    </div>
+    <div class="mt-10">
+        <a href="/users/blog"> <i class="fa-regular fa-newspaper"></i> See Blogs</a>
+        <span class="ml-3 mr-3"> </span>
+        <a href="/"> <i class="fa-solid fa-house"></i> Home Page  </a>
+    </div>
+  </div>
+
+    
+    
+</body>
+</html>
