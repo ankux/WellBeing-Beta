@@ -68,6 +68,13 @@ app.get('/users/writeblog', ensureAuthenticated, (req, res)=>{
 });
 
 
+app.get('/users/blog/view-post', ensureAuthenticated, (req, res)=>{
+    res.render('view-post', {  });
+});
+
+
+
+
 app.post('/users/register', async (req, res)=>{
     const data = {
         name: req.body.name,

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/output.css" />
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        <!-- tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Post - wellbeing</title>
+      </head>
+<body>
+
+    <header class="header h-16 sticky top-0 flex bg-white sm:justify-around max-sm:justify-between items-center shadow-md p-1 font-inter">
+    <span class="mt-1 max-sm:ml-8">
+      <img src="/assets/logo_transparent.png" alt="logo" width="150px" />
+    </span>
+
+    <ul class="hidden cursor-pointer sm:inline-flex font-semibold">
+      <li class="ml-5 mr-5 border-b-2 transition ease-in-out border-indigo-500 hover:text-indigo-500">
+        <a href="/">Home</a>
+      </li>
+      <li class="ml-5 mr-4 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#servicesSection">Services</a>
+      </li>
+      <li class="ml-5 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#contactSection">Contact</a>
+      </li>
+    </ul>
+
+    <!-- PC menu -->
+    <span class="max-sm:hidden">
+      <ul class="flex font-semibold font-inter">
+        <li class="mr-2 px-2 py-1">
+            <a href="/users/writeblog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+                <i class="fa-solid fa-pencil"></i> Write Blog
+           </a>
+        </li>
+        <li
+          class="border-2 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500"
+        >
+          <a href="/users/logout"> Log out </a>
+        </li>
+      </ul>
+    </span>
+
+    <!-- mobile hamburger menu -->
+    <span class="sm:hidden" id="navbarToggle">
+      <i class="fa fa-bars px-10 Bars"></i>
+      <i class="fa fa-xmark px-10 Bars"></i>
+    </span>
+  </header>
+
+ <!-- Blog Post -->
+
+  <div class="flex flex-col items-center font-archivo  h-[90vh]">
+    <div class="p-16 w-[75%]">
+        <h1 class="mb-5 font-extrabold text-5xl font-inter text-indigo-600">This is the Blog Heading/ Title</h1>
+        <h5 class="font-archivo text-gray-500 ">Posted by Ankush</h5>
+        <hr class="h-1 mt-6 mx-auto bg-gray-400 border-0 ">
+        <p class="mt-10 text-lg text-gray-700 font-archivo text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
+            <br> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptates vero facere unde est tenetur expedita nam quod non beatae sit aut, qui saepe sequi ducimus hic, eos rerum voluptate debitis. Laborum, fuga. Vel molestias consequatur nemo mollitia quod! Dolorem culpa ad reprehenderit quos aperiam sed consequuntur reiciendis quam exercitationem?
+        </p>
+        <hr class="h-1 mt-8 mx-auto bg-gray-400 border-0 ">
+        <div class="flex justify-center items-center">
+            <div class="mt-10 text-gray-800">
+                <a href="/users/blog"> <i class="fa-regular fa-newspaper"></i> See Blogs</a>
+                <span class="ml-3 mr-3"> </span>
+                <a href="/users/writeblog"> <i class="fa-solid fa-pencil"> </i> Post a Blog</a>
+                <span class="ml-3 mr-3"> </span>
+                <a href="/"> <i class="fa-solid fa-house"></i> Home Page  </a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
