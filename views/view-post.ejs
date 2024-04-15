@@ -58,32 +58,14 @@
 
   <div class="flex flex-col items-center font-archivo  h-[90vh]">
     <div class="p-16 w-[75%]">
-        <h1 class="mb-5 font-extrabold text-5xl font-inter text-indigo-600">This is the Blog Heading/ Title</h1>
-        <h5 class="font-archivo text-gray-500 ">Posted by Ankush</h5>
+        <h1 class="mb-5 font-extrabold text-5xl font-inter text-indigo-600"><%= blogPost.title %></h1>
+        <h5 class="font-archivo text-gray-500 ">Posted by <%= blogPost.author %></h5>
         <hr class="h-1 mt-6 mx-auto bg-gray-400 border-0 ">
-        <p class="mt-10 text-lg text-gray-700 font-archivo text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae ea suscipit quidem omnis perspiciatis. Atque voluptatibus aspernatur laborum perspiciatis autem, fugit eius numquam, dolorem debitis voluptatem possimus, delectus dolore sed. Illum ea quam doloribus repellendus ratione nemo alias. Velit, id. Assumenda distinctio, eveniet praesentium hic voluptatibus alias repudiandae libero?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugit unde quam, tempore eligendi nam omnis, iure ratione maiores, est rerum ipsam reprehenderit praesentium incidunt? Aliquam voluptate aspernatur repellendus quos. Earum officia quibusdam impedit animi vel pariatur molestiae harum, quos expedita, in cumque obcaecati nostrum incidunt, quia ipsa nam culpa?
-            <br> <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptates vero facere unde est tenetur expedita nam quod non beatae sit aut, qui saepe sequi ducimus hic, eos rerum voluptate debitis. Laborum, fuga. Vel molestias consequatur nemo mollitia quod! Dolorem culpa ad reprehenderit quos aperiam sed consequuntur reiciendis quam exercitationem?
-        </p>
+        <div class="mt-10 w-[75%] text-wrap  text-lg text-gray-700 font-archivo text-justify">
+          
+            <%= blogPost.content %>
+          
+        </div>
         <hr class="h-1 mt-8 mx-auto bg-gray-400 border-0 ">
         <div class="flex justify-center items-center">
             <div class="mt-10 text-gray-800">

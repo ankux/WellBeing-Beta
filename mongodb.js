@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { types } = require('pg');
+
 
 mongoose.connect("mongodb://localhost:27017/wellbeingdb")
 .then(()=>{
@@ -9,6 +9,7 @@ mongoose.connect("mongodb://localhost:27017/wellbeingdb")
     console.log('failded to connect');
 })
 
+//Log in Schema
 const LogInSchema = new mongoose.Schema({
     name:{
         type: String,
@@ -23,8 +24,32 @@ const LogInSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
 
 const collection = new mongoose.model("users", LogInSchema);
 
-module.exports = collection;
+
+//Blog Post Schema
+const BlogPostSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const BlogPost = mongoose.model("BlogPost", BlogPostSchema);
+
+
+module.exports = { collection, BlogPost }

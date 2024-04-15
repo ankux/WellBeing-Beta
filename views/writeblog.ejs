@@ -53,9 +53,9 @@
   </header>
 
   <div class="flex flex-col justify-center items-center font-archivo  h-[90vh]">
-    <div class="p-5 h-[60vh] w-[70%] rounded shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
+    <div class="p-5 h-[60vh] w-[75%] rounded shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
         <h1 class="text-2xl text-gray-800 font-bold font-inter">Writing as <%= userName %> </h1>
-        <form class="mt-3" action="/writeblog" method="post">
+        <form class="mt-3" action="/users/writeblog" method="post">
             <input class="border-2 w-full h-[50px] rounded p-1 mt-2" placeholder="Title" type="text" id="title" name="title" required> <br>
             <textarea class="border-2 w-full h-[210px] rounded p-1 mt-2" placeholder="Content" id="content" name="content" required></textarea> <br>
             <button class="border-2 w-32 mt-1 p-1 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500" type="submit">Post</button>

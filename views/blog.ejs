@@ -60,71 +60,21 @@
   <div class="flex flex-col p-10 items-center font-archivo  h-[90vh]">
     <div class="p-5 w-[75%]">
         <ul>
+          <% blogPosts.forEach(post => { %>
             <li>
                 <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify">Title of the blog goes here</h1>
-                    <h5 class="font-archivo mt-3 text-gray-600">By Ankush</h5>
+                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify"><%= post.title %></h1>
+                    <h5 class="font-archivo mt-3 text-gray-600">By <%= post.author %></h5>
                     <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
                     <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda libero eius aliquid molestias eligendi pariatur maiores hic illum quos aspernatur, quasi aliquam deserunt minima, atque sequi eveniet ipsam ipsum dicta, rem porro fugit? Aut facere aliquid molestiae facilis provident. Odit debitis dolores sequi id cumque totam quo sed esse.
+                      <%= post.content.substring(0, 100) %>
                     </p>
                     <div class="mt-4">
-                        <a href="/users/blog/view-post" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
+                        <a href="/users/blog/view-post/<%= post._id %>" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify">Title of the blog goes here</h1>
-                    <h5 class="font-archivo mt-3 text-gray-600">By Ankush</h5>
-                    <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
-                    <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda libero eius aliquid molestias eligendi pariatur maiores hic illum quos aspernatur, quasi aliquam deserunt minima, atque sequi eveniet ipsam ipsum dicta, rem porro fugit? Aut facere aliquid molestiae facilis provident. Odit debitis dolores sequi id cumque totam quo sed esse.
-                    </p>
-                    <div class="mt-4">
-                        <a href="/users/blog/view-post" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify">Title of the blog goes here</h1>
-                    <h5 class="font-archivo mt-3 text-gray-600">By Ankush</h5>
-                    <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
-                    <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda libero eius aliquid molestias eligendi pariatur maiores hic illum quos aspernatur, quasi aliquam deserunt minima, atque sequi eveniet ipsam ipsum dicta, rem porro fugit? Aut facere aliquid molestiae facilis provident. Odit debitis dolores sequi id cumque totam quo sed esse.
-                    </p>
-                    <div class="mt-4">
-                        <a href="/users/blog/view-post" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify">Title of the blog goes here</h1>
-                    <h5 class="font-archivo mt-3 text-gray-600">By Ankush</h5>
-                    <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
-                    <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda libero eius aliquid molestias eligendi pariatur maiores hic illum quos aspernatur, quasi aliquam deserunt minima, atque sequi eveniet ipsam ipsum dicta, rem porro fugit? Aut facere aliquid molestiae facilis provident. Odit debitis dolores sequi id cumque totam quo sed esse.
-                    </p>
-                    <div class="mt-4">
-                        <a href="/users/blog/view-post" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify">Title of the blog goes here</h1>
-                    <h5 class="font-archivo mt-3 text-gray-600">By Ankush</h5>
-                    <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
-                    <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda libero eius aliquid molestias eligendi pariatur maiores hic illum quos aspernatur, quasi aliquam deserunt minima, atque sequi eveniet ipsam ipsum dicta, rem porro fugit? Aut facere aliquid molestiae facilis provident. Odit debitis dolores sequi id cumque totam quo sed esse.
-                    </p>
-                    <div class="mt-4">
-                        <a href="/users/blog/view-post" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
-                    </div>
-                </div>
-            </li>
+            <% }); %>
         </ul>
         
     </div>
