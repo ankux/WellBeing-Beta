@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/output.css" />
-        <script src="jquery-3.7.1.min.js"></script>
-        <script src="script.js"></script>
+        <script src="/jquery-3.7.1.min.js"></script>
+        <script src="/script.js"></script>
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
         <!-- tailwind -->
@@ -59,14 +59,30 @@
   <div class="flex flex-col items-center font-archivo  h-[90vh]">
     <div class="p-16 w-[75%]">
         <h1 class="mb-5 font-extrabold text-5xl font-inter text-indigo-600"><%= blogPost.title %></h1>
-        <h5 class="font-archivo text-gray-500 ">Posted by <%= blogPost.author %></h5>
+        
+        <div class="flex justify-between items-center">
+          <h5 class="text-gray-500 ">Posted by <%= blogPost.author %></h5>
+          <% if ( userEmail === blogPost.authorEmail ) { %>
+          <div class="flex justify-start items-center">
+            <a href="/users/blog/edit-post/<%= blogPost._id %>" class="text-gray-500 mr-4"> <i class="fa-solid fa-pen-to-square"></i> Edit</a>
+            <a href="/users/blog/delete-post/<%= blogPost._id %>" class="text-red-500 ml-4"> <i class="fa-solid fa-trash"></i> Delete</a>
+          </div>
+          <% } %>
+        </div>
+
         <hr class="h-1 mt-6 mx-auto bg-gray-400 border-0 ">
-        <div class="mt-10 w-[75%] text-wrap  text-lg text-gray-700 font-archivo text-justify">
+
+        <div class="mt-6 rounded">
+          <center> <img src=" <%= blogPost.imgurl %> " alt="image" class="rounded"> </center>
+        </div>
+
+        <div class="mt-10 w-[100%] text-wrap  text-lg text-gray-700 text-justify">
           
             <%= blogPost.content %>
           
         </div>
         <hr class="h-1 mt-8 mx-auto bg-gray-400 border-0 ">
+
         <div class="flex justify-center items-center">
             <div class="mt-10 text-gray-800">
                 <a href="/users/blog"> <i class="fa-regular fa-newspaper"></i> See Blogs</a>
@@ -76,6 +92,7 @@
                 <a href="/"> <i class="fa-solid fa-house"></i> Home Page  </a>
             </div>
         </div>
+
     </div>
   </div>
 

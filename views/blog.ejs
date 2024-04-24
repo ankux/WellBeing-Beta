@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/output.css" />
-        <script src="jquery-3.7.1.min.js"></script>
-        <script src="script.js"></script>
+        <script src="/jquery-3.7.1.min.js"></script>
+        <script src="/script.js"></script>
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
         <!-- tailwind -->
@@ -58,19 +58,25 @@
 
 
   <div class="flex flex-col p-10 items-center font-archivo  h-[90vh]">
-    <div class="p-5 w-[75%]">
+    <div class="p-5 w-[80%]">
         <ul>
           <% blogPosts.forEach(post => { %>
             <li>
-                <div class="p-5 mt-3 border-2 rounded">
-                    <h1 class="font-inter font-bold text-indigo-600 text-4xl text-justify"><%= post.title %></h1>
+                <div class="p-5 mt-3 border-2 rounded flex justify-start items-start">
+                  <div class="mt-3 border-2 rounded mr-8 w-[35%]">
+                    <img src="<%= post.imgurl %>" alt="image" class="blog-image rounded">
+                  </div>
+                  <div class="mt-3 w-[65%]">
+                    <h1 class="font-inter font-bold text-indigo-600 text-4xl "><%= post.title %></h1>
                     <h5 class="font-archivo mt-3 text-gray-600">By <%= post.author %></h5>
                     <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
                     <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
-                      <%= post.content.substring(0, 100) %>
+                      <%= post.content.substring(0, 100) %>...
                     </p>
                     <div class="mt-4">
                         <a href="/users/blog/view-post/<%= post._id %>" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
+                  </div>
+                    
                     </div>
                 </div>
             </li>

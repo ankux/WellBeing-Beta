@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 mongoose.connect("mongodb://localhost:27017/wellbeingdb")
 .then(()=>{
     console.log('mongodb connected');
@@ -40,6 +39,14 @@ const BlogPostSchema = new mongoose.Schema({
         required: true
     },
     author: {
+        type: String,
+        required: true
+    },
+    authorEmail: {
+        type: String,
+        required: true
+    },
+    imgurl: {
         type: String,
         required: true
     },
