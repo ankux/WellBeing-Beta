@@ -16,7 +16,6 @@ This project is a website aimed at promoting mental health and wellbeing. It off
 - **CSS**: Used for styling and layout.
 - **JavaScript**: Used for interactivity and dynamic content.
 - **FontAwesome**: Icons for visual enhancements.
-- **SwiperJS**: Used for slider functionality.
 - **jQuery**: JavaScript library for DOM manipulation and event handling.
 
 ## Deployment
