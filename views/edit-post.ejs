@@ -36,19 +36,15 @@
     <!-- PC menu -->
     <span class="max-sm:hidden">
       <ul class="flex font-semibold font-inter">
-          <li class="mr-2 px-2 py-1">
-              <a
-                href="/users/blog"
-                class="hover:border-b-4 hover:border-gray-500 transition ease-in-out"
-              >
-                Read Blogs
-              </a>
-            </li>
-
-        <li
-          class="border-2 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500"
-        >
-          <a href="/users/logout"> Log out </a>
+        <li class="mr-2 px-2 py-1">
+          <a href="/users/writeblog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+               Write Blog
+         </a>
+        </li>
+        <li class="mr-2 px-2 py-1">
+          <a href="/users/blog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+            Read Blogs
+          </a>
         </li>
       </ul>
     </span>
@@ -69,11 +65,15 @@
       <li class="mb-5"><a href="">Home</a></li>
       <li class="mb-5"><a href="#servicesSection">Services</a></li>
       <li class="mb-5"><a href="#contactSection">Contact</a></li>
-      <li class="mb-4 border-2 border-gray-500 rounded px-3 py-1">
-        <a href="">Sign Up</a>
+      <li class="mr-2 px-2 py-1">
+        <a href="/users/writeblog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+            <i class="fa-solid fa-pencil"></i> Write Blog
+       </a>
       </li>
-      <li class="mb-4 border-2 border-gray-500 rounded px-4 py-1">
-        <a href="">Sign In</a>
+      <li class="mr-2 px-2 py-1">
+        <a href="/users/blog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+          Read Blogs
+        </a>
       </li>
     </ul>
   </div>
@@ -82,8 +82,8 @@
     <div class="p-3 h-[65vh] w-[75%] rounded border-2 border-gray-200">
         <form class="mt-2" action="/users/blog/edit-post/<%= blogPost._id %>" method="post">
             <div class="inline-block border-2 w-full h-[55px] rounded p-1 mt-2 outline-indigo-500">
-                <label for="title" class="block text-sm text-gray-500">Title</label>
-                <input class="block outline-none border-none leading-6" type="text" id="title" name="title" value="<%= blogPost.title %>" required> <br>
+                <label for="title" class="block text-sm text-gray-500 w-full">Title</label>
+                <input class="block outline-none border-none leading-6 w-full" type="text" id="title" name="title" value="<%= blogPost.title %>" required> <br>
             </div>
             <div class="inline-block border-2 w-full h-[55px] rounded p-1 mt-1 outline-indigo-500">
                 <label for="title" class="block text-sm text-gray-500 w-full">Image Url</label>

@@ -4,7 +4,6 @@ const session = require('express-session');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { collection, BlogPost } = require('./mongodb');
-const { default: mongoose } = require('mongoose');
 const PORT = process.env.PORT || 8000;
 
 
